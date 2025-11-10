@@ -1,266 +1,951 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Farshaaz Ahmed</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&family=Montserrat:wght@400;700&family=Comic+Neue:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    <style>
-        body {font-family: 'Montserrat', sans-serif;color:#444;background-color:#f4f7fd;padding-bottom:80px;overflow-x:hidden;position:relative}
-        .doodle{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.15;background-image:repeating-linear-gradient(135deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 2px, transparent 2px, transparent 12px), repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 10px);background-size:auto;background-repeat:repeat;transition:transform .5s ease;}
-        .hero{background:linear-gradient(135deg,#ff5f6d,#ffc371);color:#fff;padding:80px 40px;display:flex;align-items:center;}
-        .hero .text-content{flex:1;padding-left:20px}
-        .hero h1{font-size:3.2rem;font-weight:800;color:#61190c}
-        .hero img{width:340px;border:7px solid transparent;border-image:url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Zigzag_pattern.svg') 12 stretch;border-radius:7px;box-shadow:0 8px 10px rgba(144,58,58,.5);border:10px solid #fff}
-        .section-header{margin-bottom:20px;font-family:'Oswald', sans-serif;font-size:2.2rem;font-weight:800}
-        .section-description{font-size:1.25rem;margin-bottom:10px;color:#b09999}
-        .experience-section{background:linear-gradient(to right, rgba(75,0,130,.3), rgba(75,0,130,.5));color:#fff;padding:30px}
-        .about-section{padding:20px}
-        .skill-icon{text-align:center;margin:20px;padding:25px;border-radius:14px;background:linear-gradient(135deg,#ffffff,#e3f0ff);box-shadow:0 6px 18px rgba(0,0,0,0.12);transition:transform .3s ease, box-shadow .3s ease;}
-        .skill-icon:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-        .skill-icon:hover{transform:scale(1.05);filter:drop-shadow(0 4px 10px rgba(0,0,0,.2))}
-        .skill-icon i{font-size:64px}
-        .project-card{background:linear-gradient(#fff,#f0f0f0);border-radius:10px;overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;box-shadow:0 4px 10px rgba(0,0,0,.1);padding:20px;margin-bottom:20px}
-        .project-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
-        nav, footer{background:none;color:#000;font-family:'Comic Neue', cursive;font-size:1.3rem;font-weight:700}
-        .contact-links{font-size:18px;margin:10px;color:#007bff;text-decoration:none}
-        .contact-links:hover{text-decoration:underline}
-        footer{text-align:center;position:relative;bottom:0;width:100%;padding:10px 0}
-    
-        /* Professional Hover Enhancements */
-        .project-card:hover{transform:translateY(-10px) scale(1.02); box-shadow:0 14px 28px rgba(0,0,0,0.25);}        
-        .cert-card{transition:transform .35s ease, box-shadow .35s ease !important; border-radius:14px !important;}
-        .cert-card:hover{transform:translateY(-10px)!important; box-shadow:0 14px 30px rgba(0,0,0,0.3)!important;}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syed Farshaaz Ahmed</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pacifico&family=Montserrat:wght@400;700&family=Comic+Neue:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* Red Hat inspired light theme */
+      --bg: #f5f5f7;
+      --card: rgba(255,255,255,0.75);
+      --card-2: rgba(250,250,252,0.6);
+      --text: #1e1e1e;
+      --muted: #6b7280;
+      --brand-red: #ee0000; /* Red Hat Red */
+      --brand-red-2: #ff4d4d;
+      --black: #0a0a0a;
+      --accent: #ffb199;
+      --ring: rgba(238, 0, 0, .35);
+      --shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+    [data-theme="dark"] {
+      --bg: #000000;
+      --card: rgba(0,0,0,0.65);
+      --card-2: rgba(0,0,0,0.45);
+      --text: #ffffff;
+      --muted: #b0b0b0;
+      --brand-red: #ee0000;
+      --brand-red-2: #ff4d4d;
+      --black: #000000;
+      --accent: #ff9aa2;
+      --ring: rgba(255, 77, 77, .55);
+      --shadow: 0 24px 48px rgba(0,0,0,.85);
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      padding-bottom: 80px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle background doodle + parallax */
+    .doodle{ display:none !important; }
+
+    /*/* Light-theme doodle reduction */
+    [data-theme="light"] .doodle{ display:none !important; }
+    [data-theme="dark"] .doodle{ display:none !important; }
+
+    /* Red underline for section headers */
+    .section-header { position: relative; }
+    .section-header::after{
+      content:""; display:block; width:84px; height:4px; margin:12px auto 0 auto; border-radius:999px;
+      background: var(--brand-red);
+    }
+
+    /* Animated skill icons */
+    @keyframes floatY { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+    .skill-icon { will-change: transform; }
+    .skill-icon img { transition: transform .25s ease; }
+    .skill-icon:hover img { transform: scale(1.06) rotateZ(-1deg); }
+    /* disable float animation on skills */
+    #technical-skills .skill-icon:nth-child(odd){ animation: none !important; }
+    #technical-skills .skill-icon:nth-child(even){ animation: none !important; }
+
+    /* Scroll progress bar */
+    #progressBar{ position: fixed; left:0; top:0; height:4px; width:0; background: var(--brand-red); z-index: 2000; box-shadow: 0 0 8px rgba(238,0,0,.6); transition: width .08s linear; }
+
+    /* Shimmer utility (apply with .shimmer or via data-attr) */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+      animation: shimmer 2.25s linear infinite;
+    }
+    .shimmer-on-hover:hover { animation: shimmer 2.25s linear infinite; }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      background: radial-gradient(1200px 600px at 20% 20%, color-mix(in srgb, var(--brand-red) 45%, transparent), transparent 60%),
+                  linear-gradient(135deg, #1a1a1a, var(--black));
+      color:#fff; padding:80px 40px; display:flex; align-items:center; gap: 28px;
+      box-shadow: var(--shadow);
+      border-bottom-left-radius: 14px; border-bottom-right-radius: 14px;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:auto auto -120px -120px; width:520px; height:520px;
+      background: radial-gradient(closest-side, rgba(238,0,0,.65), rgba(238,0,0,.25), transparent 60%);
+      filter: blur(20px); opacity:.9;
+      animation: blobMorph 14s ease-in-out infinite;
+      border-radius: 38% 62% 45% 55% / 55% 35% 65% 45%;
+      z-index:0;
+    }
+    @keyframes blobMorph {
+      0%   { transform: translate(0,0) scale(1); border-radius: 38% 62% 45% 55% / 55% 35% 65% 45%; }
+      33%  { transform: translate(40px,-20px) scale(1.05); border-radius: 55% 45% 60% 40% / 40% 60% 35% 65%; }
+      66%  { transform: translate(-20px,30px) scale(0.95); border-radius: 45% 55% 38% 62% / 60% 40% 55% 45%; }
+      100% { transform: translate(0,0) scale(1); border-radius: 38% 62% 45% 55% / 55% 35% 65% 45%; }
+    }
+    .hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.2rem); font-weight: 800; color: #ffffff; position: relative; z-index:1; }
+    .hero img{ width:340px; max-width: 40vw; border-radius:14px; object-fit:cover; border: 8px solid var(--card);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35); position: relative; z-index:1;}
+    .hero .text-content p{ color:#f1f5f9; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+
+
+    .section-header{ margin-bottom:20px; font-family:'Oswald', sans-serif; font-size: clamp(1.8rem, 3.4vw, 2.2rem); font-weight:800 }
+    .section-description{ font-size:1.1rem; margin-bottom:10px; color: #e5e7eb; }
+
+    /* Experience band */
+    .experience-section{
+      background: var(--black) !important;
+      color:#fff; padding:30px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    /* Headings visibility helpers */
+    .section-header{ margin-bottom:20px; font-family:'Oswald', sans-serif; font-size: clamp(1.9rem, 3.6vw, 2.4rem); font-weight:900; letter-spacing:.2px; color: var(--text); text-shadow: none; }
+    .experience-section .section-header, .glass-dark .section-header { color:#ffffff !important; text-shadow: 0 1px 2px rgba(0,0,0,.45); }
+    /* Light theme readability overrides */
+    [data-theme="light"] .section-header { color:#0a0a0a !important; text-shadow:none !important; }
+    [data-theme="light"] .section-description { color:#374151 !important; }
+    /* Explicit section fixes */
+    [data-theme="light"] #technical-skills .section-header,
+    [data-theme="light"] #certifications .section-header,
+    [data-theme="light"] #professional-experience .section-header,
+    [data-theme="light"] #projects .section-header,
+    [data-theme="light"] #about .section-header { color:#0a0a0a !important; }
+
+    /* Certification card text contrast (light) */
+    [data-theme="light"] #certifications .cert-card h5,
+    [data-theme="light"] #certifications .cert-card p,
+    [data-theme="light"] #certifications .cert-card a { color:#0a0a0a !important; }
+    [data-theme="light"] #certifications .cert-card .text-body-secondary { color:#4b5563 !important; }
+    [data-theme="light"] #certifications .cert-card a { color: var(--brand-red) !important; text-decoration:none; }
+
+    /* Section backgrounds for readability */
+    /* Section backgrounds unified */
+    #technical-skills, #certifications, #professional-experience, #projects, #about {
+  background: var(--bg) !important;
+}
+/* Thin RedHat style section separators */
+[data-theme="dark"] section { border-bottom: 1px solid rgba(238,0,0,0.22) !important; }
+
+[data-theme="dark"] #technical-skills,
+[data-theme="dark"] #certifications,
+[data-theme="dark"] #professional-experience,
+[data-theme="dark"] #projects,
+[data-theme="dark"] #about {
+  background: #000000 !important;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+    /* Increase heading contrast in light theme */
+    [data-theme="light"] .section-header { color:#0c0c0c !important; font-weight:900 !important; text-shadow:none !important; }
+
+    /* Footer contrast */
+    [data-theme="light"] footer h2, [data-theme="light"] footer p, [data-theme="light"] footer a { color:#0c0c0c !important; }
+
+    /* Skill grid */
+    .skill-icon { text-align:center; margin:14px; padding:20px; border-radius:14px;
+      background: linear-gradient(135deg, var(--card), var(--card-2)); box-shadow: var(--shadow);
+      transition: transform .28s ease, box-shadow .28s ease, outline-color .28s ease;
+      outline: 2px solid transparent; position: relative; overflow: hidden;
+    }
+    .skill-icon::after{
+      content: ""; position: absolute; inset: -100% 0 auto; height: 60%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+      transform: translateY(-100%);
+      transition: transform .6s ease; pointer-events:none;
+    }
+    .skill-icon:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 0 22px rgba(238,0,0,0.55) !important;
+      outline-color: var(--brand-red) !important;
+    }
+    .skill-icon:hover::after{ transform: translateY(80%); }
+    .skill-icon img{ height:64px; width:auto; object-fit:contain; transition: transform .25s ease; }
+    .skill-icon h5{
+  font-size: .88rem;
+  margin-top: 10px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+}
+
+    /* Projects */
+    .project-card h3{
+      position: relative;
+      padding-left: 14px;
+      text-align: left !important;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: .8px;
+      margin-bottom: 12px;
+    }
+    .project-card h3::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--brand-red);
+      border-radius: 2px;
+    }
+
+    /* Projects */
+    #projects { background: var(--bg) !important; padding-top: 5rem; padding-bottom: 4rem; }
+    [data-theme="dark"] #projects { background: #111 !important; }
+    .project-card{
+      position: relative;
+      background: rgba(0,0,0,0.55) !important;
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      border-radius: 14px;
+      border: 1px solid rgba(238,0,0,0.18);
+      box-shadow: 0 0 18px rgba(238,0,0,0.18);
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      overflow: hidden;
+    }
+    /* Apple-style spotlight hover */
+    .project-card::before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.18), transparent 60%);
+      opacity:0;
+      transition: opacity .3s ease;
+      pointer-events:none;
+    }
+    .project-card:hover::before{ opacity:1; }
+    .project-card:hover{
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(238,0,0,0.65);
+      box-shadow: 0 0 34px rgba(238,0,0,0.65);
+    }
+    .project-card:hover{
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(238,0,0,0.65);
+      box-shadow: 0 0 34px rgba(238,0,0,0.65);
+    }
+    .project-card:hover{ transform: translateY(-6px) scale(1.015); box-shadow: 0 18px 36px rgba(0,0,0,.3) }
+
+    /* Ensure project header contrast */
+    #projects .section-header { color: var(--text) !important; text-shadow:none !important; }
+    [data-theme="dark"] #projects .section-header { color:#ffffff !important; text-shadow:0 1px 3px rgba(0,0,0,.65)!important; }
+
+    nav, footer{ background:none; color:var(--text); font-family:'Comic Neue', cursive; font-size:1.1rem; font-weight:700 }
+    .contact-links{ font-size:18px; margin:10px; color: var(--brand-red); text-decoration:none }
+    .contact-links:hover{ text-decoration:underline }
+    footer{ text-align:center; position:relative; bottom:0; width:100%; padding:10px 0 }
+
+    /* Fancy hover for nav links */
+    .nav-link { position: relative; }
+    .nav-link::after{
+      content: ""; position: absolute; left:0; bottom: 2px; height: 2px; width:0; background: linear-gradient(90deg, var(--brand-red), #000000); transition: width .25s ease;
+    }
+    .nav-link:hover::after{ width:100%; }
+
+    /* Cards with premium hover */
+    .cert-card{ position: relative; overflow:hidden; border-radius:14px !important; background: linear-gradient(135deg,#fef9ff,#e8ecff); padding: 24px; box-shadow: var(--shadow); transition: transform .28s ease, box-shadow .28s ease !important; }
+    .cert-card:hover{ transform: translateY(-8px) !important; box-shadow: 0 18px 34px rgba(0,0,0,.35) !important; }
+    /* Dark theme overrides for certs */
+    [data-theme="dark"] .cert-card{
+      background: linear-gradient(135deg, rgba(34,34,40,.88), rgba(20,20,26,.78));
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    [data-theme="dark"] .cert-card h5,
+    [data-theme="dark"] .cert-card p,
+    [data-theme="dark"] .cert-card a { color: #f5f7ff !important; }
+    [data-theme="dark"] .cert-card .text-body-secondary { color: #cfd5ff !important; }
+    [data-theme="dark"] .cert-card a { color: var(--brand-red) !important; text-decoration: none; }
+
+    /* Floating actions */
+    .fab { position: fixed; right: 18px; bottom: 18px; z-index: 1000; display: flex; flex-direction: column; gap: 10px; }
+    .fab .btn { border-radius: 999px; box-shadow: var(--shadow); padding: 12px 14px; }
+
+    /* Theme toggle button in navbar */
+    .icon-btn { border: none; background: transparent; padding: 8px 10px; border-radius: 10px; transition: background-color .2s ease, transform .15s ease; cursor: pointer; }
+    .icon-btn:hover { background: rgba(255,255,255,.06); transform: translateY(-2px); }
+    .icon-btn, .icon-btn * { pointer-events: auto !important; }
+    .navbar .icon-btn { position: relative; z-index: 1201; }
+
+    /* Toggler icon visibility for both themes */
+    .navbar-dark .navbar-toggler { border-color: rgba(255,255,255,.25); }
+    .navbar-dark .navbar-toggler-icon { background-image: var(--bs-navbar-toggler-icon-bg, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")); }
+    .navbar-light .navbar-toggler { border-color: rgba(0,0,0,.2); }
+    .navbar-light .navbar-toggler-icon { background-image: var(--bs-navbar-toggler-icon-bg, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")); }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+      /* Apple-like water blur / glass */
+    .glass { backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .glass-dark { backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+      background: radial-gradient(800px 400px at 10% 10%, rgba(238,0,0,.20), transparent 60%), linear-gradient(180deg, rgba(20,20,20,.78), rgba(10,10,10,.58));
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    /* Terminal status widget */
+    .terminal { border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+    .terminal .titlebar{ display:flex; align-items:center; gap:8px; padding:10px 12px; background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.08)); }
+    .dot{ width:12px; height:12px; border-radius:999px; display:inline-block; }
+    .dot.red{ background:#ff5f56; }
+    .dot.yellow{ background:#ffbd2e; }
+    .dot.green{ background:#27c93f; }
+    .terminal pre{ margin:0; padding:16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.95rem; color: var(--text); }
+    .terminal code{ color: inherit; }
+
+    /* Navbar glass */
+    .navbar.glassy { position: sticky; top: 0; z-index: 1100; border-radius: 14px; margin: 10px; backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%); }
+
+    /* Shimmer on theme icon */
+    /* Shimmer on theme icon */
+    /* Shimmer on theme icon: keep icon visible */
+    @keyframes iconShine { 0%,100%{ text-shadow: 0 0 0 rgba(255,77,77,0);} 50%{ text-shadow: 0 0 14px rgba(255,77,77,.9);} }
+    .icon-btn #themeIcon.shimmer { animation: iconShine 1.8s ease-in-out infinite; color: inherit; }
+
+        /* Global spotlight for interactive cards */
+    .skill-icon::before,
+    .cert-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.14), transparent 55%);
+      opacity: 0;
+      transition: opacity .25s ease;
+      pointer-events: none;
+    }
+    .skill-icon:hover::before,
+    .cert-card:hover::before { opacity: 1; }
+
+        /* Animated Linux prompt background */
+    .animated-linux-bg {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 18px);
+      background-size: 100% 100%;
+      z-index: -2;
+      opacity: 0.08;
+      animation: terminalScroll 20s linear infinite;
+    }
+    @keyframes terminalScroll {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 0 100%, 100% 0; }
+    }
+
+        /* Animated Linux prompt background */
+    .animated-linux-bg {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 18px);
+      background-size: 100% 100%;
+      z-index: -2;
+      opacity: 0.08;
+      animation: terminalScroll 20s linear infinite;
+    }
+    @keyframes terminalScroll {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 0 100%, 100% 0; }
+    }
+
+        /* Animated Linux prompt background */
+    .animated-linux-bg {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 18px);
+      background-size: 100% 100%;
+      z-index: -2;
+      opacity: 0.08;
+      animation: terminalScroll 20s linear infinite;
+    }
+    @keyframes terminalScroll {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 0 100%, 100% 0; }
+    }
+
+        /* Animated Linux prompt background */
+    .animated-linux-bg {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 18px);
+      background-size: 100% 100%;
+      z-index: -2;
+      opacity: 0.08;
+      animation: terminalScroll 20s linear infinite;
+    }
+    @keyframes terminalScroll {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 0 100%, 100% 0; }
+    }
+
+        /* Animated Linux prompt background */
+    .animated-linux-bg {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(180deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 18px),
+                  repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 18px);
+      background-size: 100% 100%;
+      z-index: -2;
+      opacity: 0.08;
+      animation: terminalScroll 20s linear infinite;
+    }
+    @keyframes terminalScroll {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 0 100%, 100% 0; }
+    }
+
+      /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+  /* RedHat blinking cursor */
+  #term-input {
+    caret-color: var(--brand-red) !important;
+    animation: cursorBlink 1.2s steps(1) infinite;
+  }
+  @keyframes cursorBlink {
+    0%, 50% { caret-color: var(--brand-red); }
+    51%, 100% { caret-color: transparent; }
+  }
+</style>
 </head>
 <body>
-    <div class="doodle"></div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Syed Farshaaz Ahmed</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#technical-skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#professional-experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- If you want to add email/phone later, place them here. Using only LinkedIn since that's confirmed. -->
-                    <li class="nav-item"><a class="contact-links" href="mailto:syedfarshaazahmed@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
-                    <li class="nav-item"><a class="contact-links" href="tel:+917981329741" title="Call"><i class="fa-solid fa-phone"></i></a></li>
-                    <li class="nav-item"><a class="contact-links" href="https://www.linkedin.com/in/syed-farshaaz-ahmed-b0365121b" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div class='animated-linux-bg'></div>
+  <div class='animated-linux-bg'></div>
+  <div class='animated-linux-bg'></div>
+  <div class='animated-linux-bg'></div>
+  <div class='animated-linux-bg'></div>
+  <div id="progressBar"></div>
+  <div class="doodle"></div>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg glass glassy">
     <div class="container-fluid">
-        <section id="home" class="hero">
-            <img src="profile.jpg" alt="Profile Picture" style="width:340px;border-radius:12px;margin-right:30px;object-fit:cover;">
-            
-            <div class="text-content">
-                <h1 class="text-white fw-bold">Syed Farshaaz Ahmed</h1>
-                <p class="text-white section-description mb-2">Associate Cloud Consultant</p>
-                <p class="text-white mt-3" style="max-width:800px; line-height:1.6; font-size:1.1rem;">I'm <strong>Syed Farshaaz Ahmed</strong> — an Associate Cloud Consultant focused on reliable, secure operations in <strong>OCI</strong> and <strong>Linux</strong>. I work across L1–L3, strengthen cloud architecture understanding through real‑time troubleshooting and performance management, and use automation/monitoring (Terraform, Ansible, Zabbix, Grafana) to drive measurable improvements. I’m continuously learning to build scalable, efficient, and secure environments aligned with business needs.</p>
-            </div>
-        </section>
-
-        
-
-        
-
-        <section id="technical-skills" class="mt-5 pt-5">
-            <h2 class="text-center text-dark fw-bold section-header">Technical Skills</h2>
-            <div class="row mt-3 justify-content-center">
-                <div class="col-auto skill-icon">
-                    <img src="https://icon.icepanel.io/Technology/png-shadow-512/Linux.png" alt="Linux" style="width: 70px;">
-                    <h5>Linux / RHEL</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="OCI" style="width: 70px;">
-                    <h5>Oracle Cloud (OCI)</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://www.svgrepo.com/show/448274/azure.svg" alt="Azure" style="width: 70px;">
-                    <h5>Microsoft Azure</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://www.svgrepo.com/show/448228/grafana.svg" alt="Grafana" style="width: 70px;">
-                    <h5>Grafana</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg" alt="Prometheus" style="width: 70px;">
-                    <h5>Prometheus</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://www.svgrepo.com/show/390218/monitoring-analytics-performance.svg" alt="Zabbix" style="width: 90px;">
-                    <h5>Zabbix</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg" alt="Terraform" style="width: 70px;">
-                    <h5>Terraform</h5>
-                </div>
-                <div class="col-auto skill-icon">
-                    <img src="https://www.svgrepo.com/show/349298/ansible.svg" alt="Ansible" style="width: 70px;">
-                    <h5>Ansible</h5>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications" class="mt-5 pt-5">
-            <h2 class="text-center text-dark fw-bold section-header">Certifications</h2>
-            <div class="row mt-4 justify-content-center text-center">
-
-                <div class="col-md-4 mb-4">
-                    <div class="cert-card" style="background: linear-gradient(135deg,#fef9ff,#e8ecff); border-radius: 14px; padding: 24px; box-shadow: 0 10px 26px rgba(0,0,0,0.18); transition: transform .3s ease;">
-                        <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="Oracle" style="width:50px; margin-bottom: 10px;">
-                        <h5 class="fw-bold">OCI 2025 Certified Architect Associate</h5>
-                        <p class="mb-1">Oracle · Credential ID: 100690517OCI25CAA</p>
-                        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=8F032D67DE344AE180E0941422BCAFB157626841D376576274E5585075D330C9" target="_blank" rel="noopener" style="text-decoration:none; font-weight:bold; color:#007bff;">View Credential →</a>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="cert-card" style="background: linear-gradient(135deg,#fef9ff,#e8ecff); border-radius: 14px; padding: 24px; box-shadow: 0 10px 26px rgba(0,0,0,0.18); transition: transform .3s ease;">
-                        <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="Oracle" style="width:50px; margin-bottom: 10px;">
-                        <h5 class="fw-bold">OCI 2023 Certified Foundations Associate</h5>
-                        <p class="mb-1">Oracle · Expires Jul 2026</p>
-                        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=71C32484E8821C1895455783BE2D758CF2A6A2A37D8393632E748FC2092D6A9A" target="_blank" rel="noopener" style="text-decoration:none; font-weight:bold; color:#007bff;">View Credential →</a>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="cert-card" style="background: linear-gradient(135deg,#fef9ff,#e8ecff); border-radius: 14px; padding: 24px; box-shadow: 0 10px 26px rgba(0,0,0,0.18); transition: transform .3s ease;">
-                        <img src="https://www.svgrepo.com/show/448274/azure.svg" alt="Azure" style="width:50px; margin-bottom: 10px;">
-                        <h5 class="fw-bold">Microsoft Certified: Azure Fundamentals</h5>
-                        <p class="mb-1">Microsoft · Credential ID: 46E467092E4F1A3F</p>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/ADEELFarshaaz-8052/46E467092E4F1A3F?sharingId=9869B24F182C470C" target="_blank" rel="noopener" style="text-decoration:none; font-weight:bold; color:#007bff;">View Credential →</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="professional-experience" class="mt-5 pt-5 experience-section">
-            <h2 class="text-center text-dark fw-bold section-header">Professional Experience</h2>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Associate Cloud Consultant — Infolob Solutions
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <h5>April 2024 - Present</h5>
-                                    <ul>
-                                        <li>Own day‑to‑day cloud operations across <strong>L1, L2, and L3</strong> levels to maintain uptime and smooth business operations.</li>
-                                        <li>Handle <strong>incident response</strong>, <strong>patching</strong>, and <strong>monitoring</strong> routines; create runbooks and implement preventive actions.</li>
-                                        <li>Administer <strong>OCI</strong> services: <em>Compute</em>, <em>Block Volumes</em>; use <strong>Cloud Guard</strong> for proactive threat detection and posture management.</li>
-                                        <li>Leverage <strong>OCI Advisor</strong> for cost and performance recommendations, tracking and implementing optimizations.</li>
-                                        <li>Build automation and consistency with <strong>Terraform</strong> and <strong>Ansible</strong>; integrate visibility using <strong>Zabbix</strong> and <strong>Grafana</strong>.</li>
-                                        <li>Troubleshoot across Linux/OCI layers, improving reliability and real‑time performance management through metrics and alerts.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Linux System Administrator — Western Digital Corporation
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <h5>Oct 2023 - Mar 2024 · Hyderabad (Remote)</h5>
-                                    <ul>
-                                        <li>Managed and supported <strong>Linux (RHEL)</strong> environments, ensuring uptime and compliance with enterprise standards.</li>
-                                        <li>Performed system patching, performance checks, file system management, and user access administration.</li>
-                                        <li>Collaborated with distributed teams to resolve system-level incidents and improve operational workflows.</li>
-                                        <li>Applied troubleshooting practices to optimize system performance and stability in production environments.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="infolob-role" class="mt-5 pt-5 reveal" style="background: linear-gradient(135deg,#d8eaff,#a5c9ff); padding:40px; border-radius:14px; box-shadow:0 6px 20px rgba(0,0,0,0.12);">
-            <h2 class="text-center text-dark fw-bold section-header">My Role at Infolob Solutions</h2>
-            <div class="row mt-3 justify-content-center">
-                <div class="col-md-10">
-                    <p class="text-center" style="font-size:1.2rem; line-height:1.7;">
-                        At <strong>Infolob Solutions</strong>, I work as an Associate Cloud Consultant contributing to <strong>end‑to‑end cloud operations</strong> across L1, L2, and L3 support levels.
-                        My responsibilities involve managing and optimizing <strong>Oracle Cloud Infrastructure (OCI)</strong> and <strong>Linux</strong> platforms to ensure system reliability, performance, and cost-efficiency.
-                        I actively handle <strong>incident management, patching, monitoring</strong> and apply <strong>Cloud Guard</strong> and <strong>OCI Advisor</strong> for security and optimization improvements. Additionally, I utilize <strong>Terraform, Ansible, Zabbix,</strong> and <strong>Grafana</strong> to automate workflows and enhance visibility across environments.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="mt-5 pt-5">
-            <h2 class="text-center text-dark fw-bold section-header">Highlighted Work</h2>
-            <div class="row mt-3">
-                <div class="col-md-6">
-                    <div class="project-card p-3">
-                        <h3 class="text-center">OCI Operations & Uptime</h3>
-                        <p class="text-center">Implemented incident handling, patching windows, and monitoring dashboards (Zabbix/Grafana) to improve stability and reduce MTTR.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="project-card p-3">
-                        <h3 class="text-center">Security & Cost Optimization</h3>
-                        <p class="text-center">Used Cloud Guard for proactive detection and OCI Advisor to apply cost/performance optimizations across compute and storage.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-
-        
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#technical-skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#professional-experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item me-1">
+            <button class="icon-btn" id="themeToggle" type="button" title="Toggle theme" aria-label="Toggle color theme">
+              <i id="themeIcon" class="fa-solid fa-moon shimmer"></i>
+            </button>
+          </li>
+          <li class="nav-item"><a class="contact-links" href="mailto:syedfarshaazahmed@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+          <li class="nav-item"><a class="contact-links" href="tel:+917981329741" title="Call"><i class="fa-solid fa-phone"></i></a></li>
+          <li class="nav-item"><a class="contact-links" href="https://www.linkedin.com/in/syed-farshaaz-ahmed-b0365121b" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <footer>
-        <h2>&copy; <span id="year"></span> Syed Farshaaz Ahmed</h2>
-        <p class="text-center">Connect:
-        <a class="contact-links" href="mailto:syedfarshaazahmed@gmail.com"><i class="fa-solid fa-envelope"></i> syedfarshaazahmed@gmail.com</a>
-        <span> | </span>
-        <a class="contact-links" href="tel:+917981329741"><i class="fa-solid fa-phone"></i> 7981329741</a>
-        <span> | </span>
-        <a class="contact-links" href="https://www.linkedin.com/in/syed-farshaaz-ahmed-b0365121b" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        </p>
-    </footer>
+  <div class="container-fluid">
+    <!-- Hero -->
+    <section id="home" class="hero mt-2 glass-dark">
+      <img src="profile.jpg" alt="Profile Picture" />
+      <div class="text-content">
+        <h1 class="fw-bold shimmer-on-hover">Syed Farshaaz Ahmed</h1>
+        <p class="section-description text-white mb-1">Associate Cloud Consultant</p>
+        <div class="mt-3">
+          <div class="terminal glass" id="terminal">
+            <div class="titlebar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="ms-2 fw-semibold">terminal — syed@portfolio</span>
+            </div>
+            <div class="d-flex" style="gap:8px; padding:8px 12px;"><span class="text-danger">$</span>&nbsp;<span id="demo-line"></span></div>
+<div id="term-output"></div>
+<div class="d-flex" style="gap:8px; padding:8px 12px;">
+  <span class="text-danger">$</span>
+  <input id="term-input" style="flex:1; background:transparent; border:none; color:inherit; outline:none;" autocomplete="off" />
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Doodle movement on scroll
-        window.addEventListener('scroll', () => {
-            const doodle = document.querySelector('.doodle');
-            const scrollY = window.scrollY;
-            doodle.style.transform = `translateY(${scrollY * 0.1}px)`;
+    <!-- About (moved right after hero) -->
+    <section id="about" class="mt-4 pt-4">
+      <div class="container">
+        <h2 class="text-center fw-bold section-header">About</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="glass p-4 rounded-4">
+              <p style="line-height:1.75; font-size:1.06rem;" class="mb-0">
+                I’m a hands-on <strong>Associate Cloud Consultant</strong> focused on operational excellence on <strong>Oracle Cloud (OCI)</strong> and <strong>Linux</strong>. I care about reliability, cost, and security — measured via runbooks, alerts, and real SLOs. I automate with <strong>Terraform</strong> and <strong>Ansible</strong>, monitor with <strong>Zabbix</strong> and <strong>Grafana</strong>, and keep things tidy with least‑privilege and patching. Outside work, I tinker with lab environments and keep notes that turn into checklists and scripts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Technical Skills -->
+    <section id="technical-skills" class="mt-5 pt-5">
+      <h2 class="text-center fw-bold section-header">Technical Skills</h2>
+      <div class="row mt-3 justify-content-center">
+        <div class="col-auto skill-icon">
+          <img src="https://icon.icepanel.io/Technology/png-shadow-512/Linux.png" alt="Linux" />
+          <h5>Linux / RHEL</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="OCI" />
+          <h5>Oracle Cloud (OCI)</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://www.svgrepo.com/show/448274/azure.svg" alt="Azure" />
+          <h5>Microsoft Azure</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://www.svgrepo.com/show/448228/grafana.svg" alt="Grafana" />
+          <h5>Grafana</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Prometheus_software_logo.svg" alt="Prometheus" />
+          <h5>Prometheus</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://www.svgrepo.com/show/390218/monitoring-analytics-performance.svg" alt="Zabbix" />
+          <h5>Zabbix</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://icon.icepanel.io/Technology/svg/HashiCorp-Terraform.svg" alt="Terraform" />
+          <h5>Terraform</h5>
+        </div>
+        <div class="col-auto skill-icon">
+          <img src="https://www.svgrepo.com/show/349298/ansible.svg" alt="Ansible" />
+          <h5>Ansible</h5>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="mt-5 pt-5">
+      <h2 class="text-center fw-bold section-header">Certifications</h2>
+      <div class="row mt-4 justify-content-center text-center">
+        <div class="col-md-4 mb-4">
+          <div class="cert-card">
+            <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="Oracle" style="width:50px; margin-bottom: 10px;" />
+            <h5 class="fw-bold">OCI 2025 Certified Architect Associate</h5>
+            <p class="mb-1 text-body-secondary">Oracle · Credential ID: 100690517OCI25CAA</p>
+            <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=8F032D67DE344AE180E0941422BCAFB157626841D376576274E5585075D330C9" target="_blank" rel="noopener" class="stretched-link">View Credential →</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="cert-card">
+            <img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="Oracle" style="width:50px; margin-bottom: 10px;" />
+            <h5 class="fw-bold">OCI 2023 Certified Foundations Associate</h5>
+            <p class="mb-1 text-body-secondary">Oracle · Expires Jul 2026</p>
+            <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=71C32484E8821C1895455783BE2D758CF2A6A2A37D8393632E748FC2092D6A9A" target="_blank" rel="noopener" class="stretched-link">View Credential →</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="cert-card">
+            <img src="https://www.svgrepo.com/show/448274/azure.svg" alt="Azure" style="width:50px; margin-bottom: 10px;" />
+            <h5 class="fw-bold">Microsoft Certified: Azure Fundamentals</h5>
+            <p class="mb-1 text-body-secondary">Microsoft · Credential ID: 46E467092E4F1A3F</p>
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/ADEELFarshaaz-8052/46E467092E4F1A3F?sharingId=9869B24F182C470C" target="_blank" rel="noopener" class="stretched-link">View Credential →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="professional-experience" class="mt-5 pt-5 experience-section">
+      <h2 class="text-center fw-bold section-header">Professional Experience</h2>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Associate Cloud Consultant — Infolob Solutions
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <h5>April 2024 - Present</h5>
+                  <ul>
+                    <li>Own day‑to‑day cloud operations across <strong>L1, L2, and L3</strong> levels to maintain uptime and smooth business operations.</li>
+                    <li>Handle <strong>incident response</strong>, <strong>patching</strong>, and <strong>monitoring</strong> routines; create runbooks and implement preventive actions.</li>
+                    <li>Administer <strong>OCI</strong> services: <em>Compute</em>, <em>Block Volumes</em>; use <strong>Cloud Guard</strong> for proactive threat detection and posture management.</li>
+                    <li>Leverage <strong>OCI Advisor</strong> for cost and performance recommendations, tracking and implementing optimizations.</li>
+                    <li>Build automation and consistency with <strong>Terraform</strong> and <strong>Ansible</strong>; integrate visibility using <strong>Zabbix</strong> and <strong>Grafana</strong>.</li>
+                    <li>Troubleshoot across Linux/OCI layers, improving reliability and real‑time performance management through metrics and alerts.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Linux System Administrator — Western Digital Corporation
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <h5>Oct 2023 - Mar 2024 · Hyderabad (Remote)</h5>
+                  <ul>
+                    <li>Managed and supported <strong>Linux (RHEL)</strong> environments, ensuring uptime and compliance with enterprise standards.</li>
+                    <li>Performed system patching, performance checks, file system management, and user access administration.</li>
+                    <li>Collaborated with distributed teams to resolve system-level incidents and improve operational workflows.</li>
+                    <li>Applied troubleshooting practices to optimize system performance and stability in production environments.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infolob role spotlight -->
+    <section id="infolob-role" class="mt-5 pt-5" style="background: linear-gradient(135deg, color-mix(in srgb, #d8eaff 70%, var(--card-2) 30%), color-mix(in srgb, #a5c9ff 70%, var(--card-2) 30%)); padding:40px; border-radius:14px; box-shadow: var(--shadow);">
+      <h2 class="text-center fw-bold section-header">My Role at Infolob Solutions</h2>
+      <div class="row mt-3 justify-content-center">
+        <div class="col-md-10">
+          <p class="text-center" style="font-size:1.1rem; line-height:1.7;">
+            At <strong>Infolob Solutions</strong>, I work as an Associate Cloud Consultant contributing to <strong>end‑to‑end cloud operations</strong> across L1, L2, and L3 support levels.
+            My responsibilities involve managing and optimizing <strong>Oracle Cloud Infrastructure (OCI)</strong> and <strong>Linux</strong> platforms to ensure system reliability, performance, and cost-efficiency.
+            I actively handle <strong>incident management, patching, monitoring</strong> and apply <strong>Cloud Guard</strong> and <strong>OCI Advisor</strong> for security and optimization improvements. Additionally, I utilize <strong>Terraform, Ansible, Zabbix,</strong> and <strong>Grafana</strong> to automate workflows and enhance visibility across environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mt-5 pt-5">
+      <h2 class="text-center fw-bold section-header">Highlighted Work</h2>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="project-card p-3">
+            <h3 class="text-center">OCI Operations & Uptime</h3>
+            <p class="text-center">Implemented incident handling, patching windows, and monitoring dashboards (Zabbix/Grafana) to improve stability and reduce MTTR.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card p-3">
+            <h3 class="text-center">Security & Cost Optimization</h3>
+            <p class="text-center">Used Cloud Guard for proactive detection and OCI Advisor to apply cost/performance optimizations across compute and storage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <h2>&copy; <span id="year"></span> Syed Farshaaz Ahmed</h2>
+    <p class="text-center">
+      Connect:
+      <a class="contact-links" href="mailto:syedfarshaazahmed@gmail.com"><i class="fa-solid fa-envelope"></i> syedfarshaazahmed@gmail.com</a>
+      <span> | </span>
+      <a class="contact-links" href="tel:+917981329741"><i class="fa-solid fa-phone"></i> 7981329741</a>
+      <span> | </span>
+      <a class="contact-links" href="https://www.linkedin.com/in/syed-farshaaz-ahmed-b0365121b" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" title="Quick Contact"><i class="fa-regular fa-message"></i></button>
+    <a href="#home" class="btn btn-outline-secondary" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="border-radius: 16px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel"><i class="fa-regular fa-paper-plane me-2"></i>Contact Me</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <div class="mb-3">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" name="name" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Your Email</label>
+              <input type="email" class="form-control" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" name="message" rows="4" required></textarea>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast (success) -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080">
+    <div id="sentToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <i class="fa-regular fa-circle-check me-2"></i>
+        <strong class="me-auto">Message ready</strong>
+        <small>now</small>
+        <button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Your email app will open with the message pre‑filled. Review & send!</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ===== Utilities =====
+    function updateProgress(){
+      const h = document.documentElement;
+      const scrolled = h.scrollTop || document.body.scrollTop || 0;
+      const height = Math.max(1, (h.scrollHeight - h.clientHeight));
+      const pct = Math.min(100, Math.max(0, (scrolled / height) * 100));
+      const bar = document.getElementById('progressBar');
+      if(bar) bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+
+    // ===== Theme =====
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    function applyTheme(theme){
+      const dark = theme === 'dark';
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+      if (themeIcon){ themeIcon.className = dark ? 'fa-solid fa-sun shimmer' : 'fa-solid fa-moon shimmer'; }
+      const nav = document.querySelector('nav.navbar');
+      if (nav){ nav.classList.toggle('navbar-dark', dark); nav.classList.toggle('navbar-light', !dark); }
+    }
+    const saved = localStorage.getItem('theme') || 'dark';
+    applyTheme(saved);
+    function toggleTheme(){
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next); applyTheme(next);
+    }
+    themeToggle?.addEventListener('click', (e)=>{ e.preventDefault(); toggleTheme(); });
+    themeIcon?.addEventListener('click', (e)=>{ e.preventDefault(); toggleTheme(); });
+    window.addEventListener('keydown', (e)=>{ if((e.key||'').toLowerCase()==='t') toggleTheme(); });
+
+    // ===== Spotlight follow-cursor (projects, skills, certs) =====
+    (function(){
+      const targets = document.querySelectorAll('.project-card, .skill-icon, .cert-card');
+      targets.forEach(el => {
+        el.addEventListener('pointermove', (e) => {
+          const r = el.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) * 100;
+          const y = ((e.clientY - r.top) / r.height) * 100;
+          el.style.setProperty('--mx', x.toFixed(2) + '%');
+          el.style.setProperty('--my', y.toFixed(2) + '%');
         });
-        // Gentle continuous motion
-        setInterval(() => {
-            const doodle = document.querySelector('.doodle');
-            const current = parseFloat((doodle.style.transform || 'translateY(0px)').replace('translateY(', '').replace('px)', '')) || 0;
-            doodle.style.transform = `translateY(${current - 0.1}px)`;
-        }, 1000/60);
-        // Footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        el.addEventListener('pointerleave', () => {
+          el.style.removeProperty('--mx');
+          el.style.removeProperty('--my');
+        });
+      });
+    })();
+
+    // ===== Hero Terminal (single-line demo + commands) =====
+    const termOut = document.getElementById('term-output');
+    const termIn  = document.getElementById('term-input');
+    const demoEl  = document.getElementById('demo-line');
+
+    const startTs = Date.now();
+    const pad = (n)=> String(n).padStart(2,'0');
+    const uptimeStr = ()=>{
+      const s = Math.floor((Date.now()-startTs)/1000);
+      const hh = pad(Math.floor(s/3600));
+      const mm = pad(Math.floor((s%3600)/60));
+      const ss = pad(s%60);
+      return `${hh}:${mm}:${ss}`;
+    };
+
+    function print(html){
+      const d = document.createElement('div'); d.innerHTML = html; termOut.appendChild(d); termOut.scrollTop = termOut.scrollHeight; return d;
+    }
+
+    const demoCmds = [
+      () => `terraform plan -refresh=false`,
+      () => `az vm list -o table`,
+      () => `az network vnet list -o table`,
+      () => `ip -br addr`,
+      () => `ip route`,
+      () => `terraform fmt -check`,
+      () => `az account show --query user.name`,
+    ];
+    let demoIdx = 0; let demoPaused = false; let mode = 'type'; let cursor = 0; let currentText = '';
+    function loop(){
+      if(!demoPaused){
+        if(mode==='type'){
+          if(cursor===0){ currentText = demoCmds[demoIdx % demoCmds.length](); }
+          cursor++; demoEl.textContent = currentText.slice(0,cursor);
+          if(cursor >= currentText.length){ mode='hold'; setTimeout(()=>{ mode='erase'; }, 900); }
+        } else if(mode==='erase'){
+          cursor--; demoEl.textContent = currentText.slice(0,Math.max(0,cursor));
+          if(cursor<=0){ mode='type'; demoIdx++; }
+        }
+      }
+      setTimeout(loop, mode==='erase' ? 16 : 28);
+    }
+    loop();
+
+    const commands = {
+      help(){ print('available: <code>help</code>, <code>terraform</code>, <code>azure</code>, <code>net</code>, <code>uptime</code>, <code>theme</code>, <code>clear</code>'); },
+      terraform(){ print(`<pre><code>Terraform v1.6.6
+Initializing the backend...
+Plan: 2 to add, 0 to change, 0 to destroy.
+  + oci_core_vcn.main
+  + oci_core_instance.web[0]</code></pre>`); },
+      azure(){ print(`<pre><code>$ az vm list -o table
+Name         ResourceGroup   Location   PowerState
+web-01       prod-rg         eastus     VM running
+bastion-01   net-rg          eastus     VM deallocated</code></pre>`); },
+      net(){ print(`<pre><code>$ ip -br addr
+eth0    UP   10.0.1.10/24
+lo      UP   127.0.0.1/8
+
+$ ip route
+default via 10.0.1.1 dev eth0
+10.0.1.0/24 dev eth0 proto kernel scope link src 10.0.1.10</code></pre>`); },
+      uptime(){ print(`uptime: <strong>${uptimeStr()}</strong>`); },
+      theme(){ toggleTheme(); print('theme toggled'); },
+      clear(){ termOut.innerHTML = `<div class=\"d-flex\" style=\"gap:8px; padding:8px 12px;\"><span class=\"text-danger\">$</span>&nbsp;<span id=\"demo-line\"></span></div>`; },
+    };
+
+    let resumeTimer = null;
+    function pauseDemo(){ demoPaused = true; if(resumeTimer) clearTimeout(resumeTimer); }
+    function resumeDemo(){ demoPaused = false; }
+
+    termIn?.addEventListener('keydown', (e)=>{
+      if(e.key==='Enter'){
+        const raw = termIn.value.trim(); if(!raw) return;
+        pauseDemo();
+        termOut.insertAdjacentHTML('beforeend', `<div><span class='text-danger'>$</span> ${raw}</div>`);
+        const [cmd, ...rest] = raw.split(' ');
+        (commands[cmd]?.(rest.join(' '))) ?? print(`command not found: <code>${cmd}</code>`);
+        termIn.value='';
+        resumeTimer = setTimeout(resumeDemo, 6000);
+      } else { pauseDemo(); resumeTimer = setTimeout(resumeDemo, 6000); }
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
