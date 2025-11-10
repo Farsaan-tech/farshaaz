@@ -412,7 +412,7 @@
       smallBtn?.addEventListener('click', toggleTheme);
       smallIcon?.addEventListener('click', toggleTheme);
       bigBtn?.addEventListener('click', toggleTheme);
-      window.addEventListener('keydown', (e)=>{ if((e.key||'').toLowerCase()==='t') toggleTheme(); });
+      // removed global 'T' key theme shortcut — toggle only via header button });
 
       // spotlight follow-cursor (projects, skills, certs)
       const targets = document.querySelectorAll('.project-card, .skill-icon, .cert-card');
