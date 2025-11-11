@@ -199,6 +199,12 @@
 [data-theme="dark"] #infolob-role{background:#0a0f1f !important;color:#fff !important;border:1px solid rgba(255,255,255,.12)!important;} 
 /* Zabbix logo size tweak */
   .skill-icon img[alt="Zabbix"]{ height:44px !important; width:auto !important; }
+/* ===== Scroll reveal (sections fade/slide in) ===== */
+  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.reveal-in{ opacity:1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+  }
 </style></head>
 <body>
   <div class="animated-linux-bg"></div>
@@ -240,7 +246,7 @@
           <div class="terminal glass" id="terminal">
             <div class="titlebar">
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="ms-2 fw-semibold">syed@~</span>
+              <span class="ms-2 fw-semibold">terminal — syed@portfolio</span>
             </div>
             <div class="d-flex" style="gap:8px; padding:8px 12px; border-top:1px solid rgba(255,255,255,.08); font-size:.85rem; opacity:.85;">💡 try: <code>help</code> / <code>terraform</code> / <code>azure</code> / <code>net</code> / <code>uptime</code> / <code>clear</code></div>
             <div class="d-flex" style="gap:8px; padding:8px 12px;"><span class="text-danger">$</span>&nbsp;<span id="demo-line"></span></div>
@@ -250,7 +256,7 @@
         </div>
       </div>
     </section><!-- About (after hero) -->
-<section id="about" class="mt-4 pt-4">
+<section id="about" class="reveal" class="mt-4 pt-4">
   <div class="container">
     <h2 class="text-center fw-bold section-header">About</h2>
     <div class="row justify-content-center">
@@ -266,7 +272,7 @@
 </section>
 
 <!-- Technical Skills -->
-<section id="technical-skills" class="mt-5 pt-5">
+<section id="technical-skills" class="reveal" class="mt-5 pt-5">
   <h2 class="text-center fw-bold section-header">Technical Skills</h2>
   <div class="row mt-3 justify-content-center">
     <div class="col-auto skill-icon"><img src="https://icon.icepanel.io/Technology/png-shadow-512/Linux.png" alt="Linux" /><h5>Linux / RHEL</h5></div>
@@ -281,7 +287,7 @@
 </section>
 
 <!-- Certifications -->
-<section id="certifications" class="mt-5 pt-5">
+<section id="certifications" class="reveal" class="mt-5 pt-5">
   <h2 class="text-center fw-bold section-header">Certifications</h2>
   <div class="row mt-4 justify-content-center text-center">
     <div class="col-md-4 mb-4"><div class="cert-card"><img src="https://www.svgrepo.com/show/354152/oracle.svg" alt="Oracle" style="width:50px; margin-bottom:10px;" /><h5 class="fw-bold">OCI 2025 Certified Architect Associate</h5><p class="mb-1 text-body-secondary">Oracle · Credential ID: 100690517OCI25CAA</p><a class="stretched-link" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=8F032D67DE344AE180E0941422BCAFB157626841D376576274E5585075D330C9" target="_blank" rel="noopener">View Credential →</a></div></div>
@@ -291,7 +297,7 @@
 </section>
 
 <!-- Experience -->
-<section id="professional-experience" class="mt-5 pt-5 experience-section">
+<section id="professional-experience" class="reveal" class="mt-5 pt-5 experience-section">
   <h2 class="text-center fw-bold section-header">Professional Experience</h2>
   <div class="row mt-3">
     <div class="col-md-12">
@@ -336,7 +342,7 @@
 </section>
 
 <!-- Infolob role spotlight -->
-<section id="infolob-role" style="padding:40px; border-radius:14px; box-shadow: var(--shadow);">
+<section id="infolob-role" class="reveal" style="padding:40px; border-radius:14px; box-shadow: var(--shadow);">
   <h2 class="text-center fw-bold section-header">My Role at Infolob Solutions</h2>
   <div class="row mt-3 justify-content-center">
     <div class="col-md-10">
@@ -350,7 +356,7 @@
 </section>
 
 <!-- Projects -->
-<section id="projects" class="mt-5 pt-5">
+<section id="projects" class="reveal" class="mt-5 pt-5">
   <h2 class="text-center fw-bold section-header">Highlighted Work</h2>
   <div class="row mt-3">
     <div class="col-md-6"><div class="project-card p-3"><h3 class="text-center">OCI Operations & Uptime</h3><p class="text-center">Implemented incident handling, patching windows, and monitoring dashboards (Zabbix/Grafana) to improve stability and reduce MTTR.</p></div></div>
@@ -426,6 +432,19 @@
       // --- tiny self-tests ---
       console.assert(document.getElementById('themeToggle'), 'Theme toggle button missing');
       console.assert(document.getElementById('terminal'), 'Terminal block missing');
+    })();
+  </script>  <!-- Scroll reveal JS -->  <script>
+    (function(){
+      const sections = document.querySelectorAll('section.reveal');
+      const root = document.documentElement;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced){ sections.forEach(s=>s.classList.add('reveal-in')); return; }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){ entry.target.classList.add('reveal-in'); io.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+      sections.forEach(s=>io.observe(s));
     })();
   </script>  <!-- Terminal JS -->  <script>
     (function(){
